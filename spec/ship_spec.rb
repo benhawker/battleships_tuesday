@@ -8,8 +8,20 @@ describe Ship do
   end
 
 
-  # it "it should be placed" do
-  #   expect(subject).to be_placed
-  # end
+ 	it "responds to place_ship" do
+ 		expect(subject).to respond_to :pass_to_board
+ 	end
+
+
+  it "placed equals true when ship passed to board" do
+  	subject.pass_to_board
+  	expect(subject).to be_placed
+  end	
+
+
+  it "can change direction" do
+  	subject.change_direction(:N)
+  	expect(subject.direction).to eq :N
+  end
 
 end
